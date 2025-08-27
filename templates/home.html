@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+</head>
+
+<body>
+    {% extends "base.html" %}
+
+    {% block content %}
+
+
+    <div class="form-container">
+        <h1>SGPA Calculator</h1>
+        <form action="" method="post">
+            <label>Select Branch:
+                <select name="branch" required>
+                    <option value="" disabled selected>Select</option>
+                    <option value="aids">Artificial Intelligence and Data Science</option>
+                    <option value="cse">Computer Science Engineering</option>
+                    <option value="it">Information Technology</option>
+
+                </select>
+            </label>
+            <br>
+            <label>Select Semester:
+                <select name="semester" required>
+                    <option value="" disabled selected>Select</option>
+                    <option value="1">1st Sem</option>
+                    <option value="2">2nd Sem</option>
+                    <option value="3">3rd Sem</option>
+                    <option value="4">4th Sem</option>
+                    <option value="5">5th Sem</option>
+                    <option value="6">6th Sem</option>
+                    <option value="7">7th Sem</option>
+                    <option value="8">8th Sem</option>
+                </select>
+            </label>
+
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    {% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7th Semester CSE SGPA Calculator</title>
+</head>
+
+<body>
+    <h2>7th Semester CSE SGPA Calculator</h2>
+
+    <div>
+        {% if results %}
+        <h3>Expected SGPA : {{results}}</h3>
+        {% endif %}
+    </div>
+    
+    <form method="POST" action="/cse_seventh">
+        <fieldset>
+            <legend>Internet of Things</legend>
+            <label>Grade :</label>
+            <select name="iot_grade" required>
+                <option value="" disabled selected>Select</option>
+                <option value="na">Don't Have</option>
+                <option>A++</option>
+                <option>A+</option>
+                <option>A</option>
+                <option>B+</option>
+                <option>B</option>
+                <option>C+</option>
+                <option>C</option>
+                <option>D+</option>
+                <option>D</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
+            </select><br><br>
+        </fieldset>
+        <fieldset>
+            <legend>Open Elective - I </legend>
+            <label>Grade :</label>
+            <select name="oe_grade" required>
+                <option value="" disabled selected>Select</option>
+                <option value="na">Don't Have</option>
+                <option>A++</option>
+                <option>A+</option>
+                <option>A</option>
+                <option>B+</option>
+                <option>B</option>
+                <option>C+</option>
+                <option>C</option>
+                <option>D+</option>
+                <option>D</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
+            </select><br><br>
+        </fieldset>
+        <fieldset>
+            <legend>Internet of Things Lab</legend>
+            <label>Grade :</label>
+            <select name="iotlab_grade" required>
+                <option value="" disabled selected>Select</option>
+                <option value="na">Don't Have</option>
+                <option>A++</option>
+                <option>A+</option>
+                <option>A</option>
+                <option>B+</option>
+                <option>B</option>
+                <option>C+</option>
+                <option>C</option>
+                <option>D+</option>
+                <option>D</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
+            </select><br><br>
+        </fieldset>
+        <fieldset>
+            <legend>Cyber Security Lab</legend>
+            <label>Grade :</label>
+            <select name="cslab_grade" required>
+                <option value="" disabled selected>Select</option>
+                <option value="na">Don't Have</option>
+                <option>A++</option>
+                <option>A+</option>
+                <option>A</option>
+                <option>B+</option>
+                <option>B</option>
+                <option>C+</option>
+                <option>C</option>
+                <option>D+</option>
+                <option>D</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
+            </select><br><br>
+        </fieldset>
+        <fieldset>
+            <legend>Industrial Training</legend>
+            <label>Grade :</label>
+            <select name="it_grade" required>
+                <option value="" disabled selected>Select</option>
+                <option value="na">Don't Have</option>
+                <option>A++</option>
+                <option>A+</option>
+                <option>A</option>
+                <option>B+</option>
+                <option>B</option>
+                <option>C+</option>
+                <option>C</option>
+                <option>D+</option>
+                <option>D</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
+            </select><br><br>
+        </fieldset>
+        <fieldset>
+            <legend>Seminar</legend>
+            <label>Grade :</label>
+            <select name="seminar_grade" required>
+                <option value="" disabled selected>Select</option>
+                <option value="na">Don't Have</option>
+                <option>A++</option>
+                <option>A+</option>
+                <option>A</option>
+                <option>B+</option>
+                <option>B</option>
+                <option>C+</option>
+                <option>C</option>
+                <option>D+</option>
+                <option>D</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
+            </select><br><br>
+        </fieldset>
+        <fieldset>
+            <legend>Social Outreach, Discipline & Extra Curricular Activities</legend>
+            <label>Grade :</label>
+            <select name="sodeca_grade" required>
+                <option value="" disabled selected>Select</option>
+                <option value="na">Don't Have</option>
+                <option>A++</option>
+                <option>A+</option>
+                <option>A</option>
+                <option>B+</option>
+                <option>B</option>
+                <option>C+</option>
+                <option>C</option>
+                <option>D+</option>
+                <option>D</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
+            </select><br><br>
+        </fieldset>
+        <button type="submit">Calculate SGPA</button>
+    </form>
+</body>
+
+</html>

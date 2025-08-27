@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        {% if results %}
+        <h3>Expected SGPA : {{results}}</h3>
+        {% endif %}
+    </div>
+
+    <form action="/cse_sixth" method="post">
+
+        <!-- 1. Digital Image Processing -->
+        <fieldset>
+            <legend>1. Digital Image Processing</legend>
+            <label>Grade:
+                <select name="dip_grade" required>
+                    <option value="" selected disabled>Select</option>
+                    <option value="na">Don't Have</option>
+                    <option>A++</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>B+</option>
+                    <option>B</option>
+                    <option>C+</option>
+                    <option>C</option>
+                    <option>D+</option>
+                    <option>D</option>
+                    <option>E+</option>
+                    <option>E</option>
+                    <option>F</option>
+                </select>
+            </label>
+        </fieldset>
+
+        <!-- 2. Machine Learning -->
+        <fieldset>
+            <legend>2. Machine Learning</legend>
+            <label>Grade:
+                <select name="ml_grade" required>
+                    <option value="" selected disabled>Select</option>
+                    <option value="na">Don't Have</option>
+                    <option>A++</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>B+</option>
+                    <option>B</option>
+                    <option>C+</option>
+                    <option>C</option>
+                    <option>D+</option>
+                    <option>D</option>
+                    <option>E+</option>
+                    <option>E</option>
+                    <option>F</option>
+                </select>
+            </label>
+        </fieldset>
+
+        <!-- 3. Information Security System -->
+        <fieldset>
+            <legend>3. Information Security System</legend>
+            <label>Grade:
+                <select name="iss_grade" required>
+                    <option value="" selected disabled>Select</option>
+                    <option value="na">Don't Have</option>
+                    <option>A++</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>B+</option>
+                    <option>B</option>
+                    <option>C+</option>
+                    <option>C</option>
+                    <option>D+</option>
+                    <option>D</option>
+                    <option>E+</option>
+                    <option>E</option>
+                    <option>F</option>
+                </select>
+            </label>
+        </fieldset>
+
+        <!-- 4. Computer Architecture and Organization -->
+        <fieldset>
+            <legend>4. Computer Architecture and Organization</legend>
+            <label>Grade:
+                <select name="cao_grade" required>
+                    <option value="" selected disabled>Select</option>
+                    <option value="na">Don't Have</option>
+                    <option>A++</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>B+</option>
+                    <option>B</option>
+                    <option>C+</option>
+                    <option>C</option>
+                    <option>D+</option>
+                    <option>D</option>
+                    <option>E+</option>
+                    <option>E</option>
+                    <option>F</option>
+                </select>
+            </label>
+        </fieldset>
+
+        <!-- 5. Artificial Intelligence -->
+        <fieldset>
+            <legend>5. Artificial Intelligence</legend>
+            <label>Grade:
+                <select name="ai_grade" required>
+                    <option value="" selected disabled>Select</option>
+                    <option value="na">Don't Have</option>
+                    <option>A++</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>B+</option>
+                    <option>B</option>
+                    <option>C+</option>
+                    <option>C</option>
+                    <option>D+</option>
+                    <option>D</option>
+                    <option>E+</option>
+                    <option>E</option>
+                    <option>F</option>
+                </select>
+            </label>
+        </fieldset>
+
+        <!-- 6. Cloud Computing -->
+        <fieldset>
+            <legend>6. Cloud Computing</legend>
+            <label>Grade:
+                <select name="cc_grade" required>
+                    <option value="" selected disabled>Select</option>
+                    <option value="na">Don't Have</option>
+                    <option>A++</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>B+</option>
+                    <option>B</option>
+                    <option>C+</option>
+                    <option>C</option>
+                    <option>D+</option>
+                    <option>D</option>
+                    <option>E+</option>
+                    <option>E</option>
+                    <option>F</option>
+                </select>
+            </label>
+        </fieldset>
+
+        <!-- 7. Professional Elective 1 (separate blocks for each subject) -->
+        <fieldset>
+            <legend>7. Professional Elective 1 - Distributed System</legend>
+            <label>Grade:
+                <select name="ds_grade" required>
+                    <option value="" selected disabled>Select</option>
+                    <option value="na">Don't Have</option>
+                    <option>A++</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>B+</option>
+                    <option>B</option>
+                    <option>C+</option>
+                    <option>C</option>
+                    <option>D+</option>
+                    <option>D</option>
+                    <option>E+</option>
+                    <option>E</option>
+                    <option>F</option>
+                </select>
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>7. Professional Elective 1 - Software Defined Network</legend>
+            <label>Grade:
+                <select name="sdn_grade" required>
+                    <option value="" selected disabled>Select</option>
+                    <option value="na">Don't Have</option>
+                    <option>A++</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>B+</option>
+                    <option>B</option>
+                    <option>C+</option>
+                    <option>C</option>
+                    <option>D+</option>
+                    <option>D</option>
+                    <option>E+</option>
+                    <option>E</option>
+                    <option>F</option>
+                </select>
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>7. Professional Elective 1 - Ecommerce and ERP</legend>
+            <label>Grade:
+                <select name="erp_grade" required>
+                    <option value="" selected disabled>Select</option>
+                    <option value="na">Don't Have</option>
+                    <option>A++</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>B+</option>
+                    <option>B</option>
+                    <option>C+</option>
+                    <option>C</option>
+                    <option>D+</option>
+                    <option>D</option>
+                    <option>E+</option>
+                    <option>E</option>
+                    <option>F</option>
+                </select>
+            </label>
+        </fieldset>
+
+        <!-- Practical & Sessional -->
+        <fieldset>
+            <legend>8. Digital Image Processing Lab</legend>
+            <label>Grade:
+                <select name="dip_lab_grade" required>
+                    <option value="" selected disabled>Select</option>
+                    <option value="na">Don't Have</option>
+                    <option>A++</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>B+</option>
+                    <option>B</option>
+                    <option>C+</option>
+                    <option>C</option>
+                    <option>D+</option>
+                    <option>D</option>
+                    <option>E+</option>
+                    <option>E</option>
+                    <option>F</option>
+                </select>
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>9. Machine Learning Lab</legend>
+            <label>Grade:
+                <select name="ml_lab_grade" required>
+                    <option value="" selected disabled>Select</option>
+                    <option value="na">Don't Have</option>
+                    <option>A++</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>B+</option>
+                    <option>B</option>
+                    <option>C+</option>
+                    <option>C</option>
+                    <option>D+</option>
+                    <option>D</option>
+                    <option>E+</option>
+                    <option>E</option>
+                    <option>F</option>
+                </select>
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>10. Python Lab</legend>
+            <label>Grade:
+                <select name="python_lab_grade" required>
+                    <option value="" selected disabled>Select</option>
+                    <option value="na">Don't Have</option>
+                    <option>A++</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>B+</option>
+                    <option>B</option>
+                    <option>C+</option>
+                    <option>C</option>
+                    <option>D+</option>
+                    <option>D</option>
+                    <option>E+</option>
+                    <option>E</option>
+                    <option>F</option>
+                </select>
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>11. Mobile Application Development Lab</legend>
+            <label>Grade:
+                <select name="mad_lab_grade" required>
+                    <option value="" selected disabled>Select</option>
+                    <option value="na">Don't Have</option>
+                    <option>A++</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>B+</option>
+                    <option>B</option>
+                    <option>C+</option>
+                    <option>C</option>
+                    <option>D+</option>
+                    <option>D</option>
+                    <option>E+</option>
+                    <option>E</option>
+                    <option>F</option>
+                </select>
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>12. Social Outreach, Discipline & Extra Curricular Activities</legend>
+            <label>Grade:
+                <select name="soec_grade" required>
+                    <option value="" selected disabled>Select</option>
+                    <option value="na">Don't Have</option>
+                    <option>A++</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>B+</option>
+                    <option>B</option>
+                    <option>C+</option>
+                    <option>C</option>
+                    <option>D+</option>
+                    <option>D</option>
+                    <option>E+</option>
+                    <option>E</option>
+                    <option>F</option>
+                </select>
+            </label>
+        </fieldset>
+        <button type="submit">Submit</button>
+    </form>    
+
+</body>
+
+</html>
