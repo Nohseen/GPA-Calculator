@@ -9,14 +9,17 @@ def startpage():
         branch = request.form.get("branch")
         semester = request.form.get("semester")
         if semester == "1":
-            if branch == 'aids'or'cse'or'it':
+            if branch == 'aids'or'cse'or'it'or'civil'or'ee'or'mech':
                 return redirect('/first_year_cs')
+            
         if semester == "2":
-            if branch == 'aids'or'cse'or'it':
+            if branch == 'aids'or'cse'or'it'or'civil'or'ee'or'mech':
                 return redirect('/first_year_cs')
         if semester == "3":
             if branch == 'aids'or'cse'or'it':
                 return redirect('/third')
+            if branch == 'civil':
+                return redirect('/civil_third_sem')
         if semester == "4":
             if branch == 'aids':
                 return redirect('/aids_fourth')
@@ -24,6 +27,8 @@ def startpage():
                 return redirect('/cse_fourth')
             elif branch == 'it':
                 return redirect('/it_fourth')
+            elif branch == 'civil':
+                return redirect('/civil_fourth_sem')
         if semester == "5":
             if branch == 'aids':
                 return redirect('/aids_fifth')
@@ -31,6 +36,8 @@ def startpage():
                 return redirect('/cse_fifth')
             elif branch == 'it':
                 return redirect('/it_fifth')
+            elif branch == 'civil':
+                return redirect('/civil_fifth_sem')
         if semester == "6":            
             if branch == "aids":
                 return redirect('/aids_sixth')
@@ -38,6 +45,8 @@ def startpage():
                 return redirect('/cse_sixth')
             elif branch == 'it':
                 return redirect('/it_sixth')
+            elif branch == 'civil':
+                return redirect('/civil_sixth_sem')
         if semester == "7":
             if branch == "aids":
                 return redirect('/aids_seventh')
@@ -45,6 +54,8 @@ def startpage():
                 return redirect('/cse_seventh')
             elif branch == 'it':
                 return redirect('/it_seventh')
+            elif branch == 'civil':
+                return redirect('/civil_seventh_sem')
         if semester == "8":
             if branch == "aids":
                 return redirect('/aids_eighth')
@@ -220,6 +231,80 @@ def sgpa_cal_third(grades):
     return sgpa
 
 
+#3rd sem civil
+@app.route('/civil_third_sem', methods=['GET', 'POST'])
+def civil_third_sem():
+    if request.method == "POST":
+        grades = {
+            # THEORY
+            "aem1_grade": request.form.get("aem1_grade"),
+            "tc_mefa_grade": request.form.get("tc_mefa_grade"),
+            "em_grade": request.form.get("em_grade"),
+            "surveying_grade": request.form.get("surveying_grade"),
+            "fm_grade": request.form.get("fm_grade"),
+            "bmc_grade": request.form.get("bmc_grade"),
+            "eg_grade": request.form.get("eg_grade"),
+
+            # PRACTICAL & SESSIONAL
+            "surveying_lab_grade": request.form.get("surveying_lab_grade"),
+            "fm_lab_grade": request.form.get("fm_lab_grade"),
+            "caced_grade": request.form.get("caced_grade"),
+            "cem_lab_grade": request.form.get("cem_lab_grade"),
+            "geo_lab_grade": request.form.get("geo_lab_grade"),
+            "it_grade": request.form.get("it_grade"),
+            "sodeca_grade": request.form.get("sodeca_grade"),
+        }
+
+        sgpa = sgpa_cal_civil_third(grades)   # Calculation function
+        return render_template("civil_third.html", results=sgpa)
+
+    return render_template("civil_third.html")
+
+def sgpa_cal_civil_third(grades):
+    grade_point = {
+        "na": 0,
+        "A++": 10,
+        "A+": 9,
+        "A": 8.5,
+        "B+": 8,
+        "B": 7.5,
+        "C+": 7,
+        "C": 6.5,
+        "D+": 6,
+        "D": 5.5,
+        "E+": 5,
+        "E": 4,
+        "F": 0,
+    }
+
+    total_points_scored = (
+        # THEORY
+        grade_point[grades['aem1_grade']] * 3 +       # Advance Engineering Mathematics - I
+        grade_point[grades['tc_mefa_grade']] * 2 +    # Technical Communication / MEFA
+        grade_point[grades['em_grade']] * 2 +         # Engineering Mechanics
+        grade_point[grades['surveying_grade']] * 3 +  # Surveying
+        grade_point[grades['fm_grade']] * 2 +         # Fluid Mechanics
+        grade_point[grades['bmc_grade']] * 3 +        # Building Materials and Construction
+        grade_point[grades['eg_grade']] * 2 +         # Engineering Geology
+
+        # PRACTICAL & SESSIONAL
+        grade_point[grades['surveying_lab_grade']] * 1.5 +   # Surveying Lab
+        grade_point[grades['fm_lab_grade']] * 1 +            # Fluid Mechanics Lab
+        grade_point[grades['caced_grade']] * 1.5 +           # Computer Aided Civil Engg. Drawing
+        grade_point[grades['cem_lab_grade']] * 1 +           # Civil Engg. Materials Lab
+        grade_point[grades['geo_lab_grade']] * 1 +           # Geology Lab
+        grade_point[grades['it_grade']] * 1 +                # Industrial Training
+        grade_point[grades['sodeca_grade']] * 0.5            # SODECA
+    )
+
+    total_credits = 24.5
+    sgpa = total_points_scored / total_credits
+    sgpa = float(f"{sgpa:.2f}")
+
+    if sgpa >= 10:
+        sgpa = 10.00
+
+    return sgpa
 
 
 # ------------------------------------------4th semester Calculation--------------------------------------------------------------------------------------------------------------------------
@@ -337,7 +422,78 @@ def sgpa_cal_fourth(grades):
 
     return sgpa
 
+#civil fourth sem
+@app.route('/civil_fourth_sem', methods=['GET', 'POST'])
+def civil_fourth_sem():
+    if request.method == "POST":
+        grades = {
+            # THEORY
+            "aem2_grade": request.form.get("aem2_grade"),
+            "mefa_tc_grade": request.form.get("mefa_tc_grade"),
+            "becea_grade": request.form.get("becea_grade"),
+            "som_grade": request.form.get("som_grade"),
+            "he_grade": request.form.get("he_grade"),
+            "bp_grade": request.form.get("bp_grade"),
+            "ct_grade": request.form.get("ct_grade"),
 
+            # PRACTICAL & SESSIONAL
+            "mt_lab_grade": request.form.get("mt_lab_grade"),
+            "he_lab_grade": request.form.get("he_lab_grade"),
+            "bd_grade": request.form.get("bd_grade"),
+            "as_lab_grade": request.form.get("as_lab_grade"),
+            "cl_lab_grade": request.form.get("cl_lab_grade"),
+            "sodeca_grade": request.form.get("sodeca_grade"),
+        }
+
+        sgpa = sgpa_cal_civil_fourth(grades)
+        return render_template("civil_fourth_sem.html", results=sgpa)
+
+    return render_template("civil_fourth_sem.html")
+
+def sgpa_cal_civil_fourth(grades):
+    grade_point = {
+        "na": 0,
+        "A++": 10,
+        "A+": 9,
+        "A": 8.5,
+        "B+": 8,
+        "B": 7.5,
+        "C+": 7,
+        "C": 6.5,
+        "D+": 6,
+        "D": 5.5,
+        "E+": 5,
+        "E": 4,
+        "F": 0,
+    }
+
+    total_points_scored = (
+        # THEORY
+        grade_point[grades['aem2_grade']] * 2 +       # AEM-II
+        grade_point[grades['mefa_tc_grade']] * 2 +    # MEFA / TC
+        grade_point[grades['becea_grade']] * 2 +      # Basic Electronics for Civil Engg. Applications
+        grade_point[grades['som_grade']] * 3 +        # Strength of Materials
+        grade_point[grades['he_grade']] * 3 +         # Hydraulics Engineering
+        grade_point[grades['bp_grade']] * 2 +         # Building Planning
+        grade_point[grades['ct_grade']] * 3 +         # Concrete Technology
+
+        # PRACTICAL & SESSIONAL
+        grade_point[grades['mt_lab_grade']] * 1 +     # Material Testing Lab
+        grade_point[grades['he_lab_grade']] * 1 +     # Hydraulics Engineering Lab
+        grade_point[grades['bd_grade']] * 1.5 +       # Building Drawing
+        grade_point[grades['as_lab_grade']] * 1 +     # Advanced Surveying Lab
+        grade_point[grades['cl_lab_grade']] * 1.5 +   # Concrete Lab
+        grade_point[grades['sodeca_grade']] * 0.5     # SODECA
+    )
+
+    total_credits = 23.5
+    sgpa = total_points_scored / total_credits
+    sgpa = float(f"{sgpa:.2f}")
+
+    if sgpa >= 10:
+        sgpa = 10.00
+
+    return sgpa
 
 
 # ------------------------------------------5th semester Calculation--------------------------------------------------------------------------------------------------------------------------
@@ -536,7 +692,76 @@ def sgpa_cal_fifth_it(grades):
 
     return sgpa
 
+# 5th semester Civil
+@app.route('/civil_fifth_sem', methods=['GET', 'POST'])
+def civil_fifth_sem():
+    if request.method == "POST":
+        grades = {
+            # THEORY
+            "cte_grade": request.form.get("cte_grade"),
+            "sa1_grade": request.form.get("sa1_grade"),
+            "dcs_grade": request.form.get("dcs_grade"),
+            "geo_grade": request.form.get("geo_grade"),
+            "wre_grade": request.form.get("wre_grade"),
+            "de1_grade": request.form.get("de1_grade"),
+            "de2_grade": request.form.get("de2_grade"),
 
+            # PRACTICAL
+            "csd_lab_grade": request.form.get("csd_lab_grade"),
+            "geo_lab_grade": request.form.get("geo_lab_grade"),
+            "wre_lab_grade": request.form.get("wre_lab_grade"),
+            "it_grade": request.form.get("it_grade"),
+            "sodeca_grade": request.form.get("sodeca_grade"),
+        }
+
+        sgpa = sgpa_cal_civil_fifth(grades)
+        return render_template("civil_fifth_sem.html", results=sgpa)
+
+    return render_template("civil_fifth_sem.html")
+
+def sgpa_cal_civil_fifth(grades):
+    grade_point = {
+        "na": 0,
+        "A++": 10,
+        "A+": 9,
+        "A": 8.5,
+        "B+": 8,
+        "B": 7.5,
+        "C+": 7,
+        "C": 6.5,
+        "D+": 6,
+        "D": 5.5,
+        "E+": 5,
+        "E": 4,
+        "F": 0,
+    }
+
+    total_points_scored = (
+        # THEORY
+        grade_point[grades['cte_grade']] * 2 +
+        grade_point[grades['sa1_grade']] * 2 +
+        grade_point[grades['dcs_grade']] * 3 +
+        grade_point[grades['geo_grade']] * 3 +
+        grade_point[grades['wre_grade']] * 2 +
+        grade_point[grades['de1_grade']] * 2 +
+        grade_point[grades['de2_grade']] * 2 +
+
+        # PRACTICAL & SESSIONAL
+        grade_point[grades['csd_lab_grade']] * 1.5 +
+        grade_point[grades['geo_lab_grade']] * 1.5 +
+        grade_point[grades['wre_lab_grade']] * 1 +
+        grade_point[grades['it_grade']] * 2.5 +
+        grade_point[grades['sodeca_grade']] * 0.5
+    )
+
+    total_credits = 23
+    sgpa = total_points_scored / total_credits
+    sgpa = float(f"{sgpa:.2f}")
+
+    if sgpa >= 10:
+        sgpa = 10.00
+
+    return sgpa
 
 
 
@@ -780,6 +1005,72 @@ def sgpa_cal_sixthsemcse(grades):
 
     return sgpa
 
+
+# 6th sem CIVIL
+@app.route('/civil_sixth_sem', methods=['GET', 'POST'])
+def civil_sixth_sem():
+    if request.method == "POST":
+        grades = {
+            # THEORY
+            "wsa_grade": request.form.get("wsa_grade"),
+            "sa2_grade": request.form.get("sa2_grade"),
+            "ee_grade": request.form.get("ee_grade"),
+            "dss_grade": request.form.get("dss_grade"),
+            "ec_grade": request.form.get("ec_grade"),
+            "dept_elec3_grade": request.form.get("dept_elec3_grade"),
+            "dept_elec4_grade": request.form.get("dept_elec4_grade"),
+
+            # PRACTICAL & SESSIONAL
+            "eedl_grade": request.form.get("eedl_grade"),
+            "ssd_lab_grade": request.form.get("ssd_lab_grade"),
+            "qsv_grade": request.form.get("qsv_grade"),
+            "wersd_grade": request.form.get("wersd_grade"),
+            "fd_grade": request.form.get("fd_grade"),
+            "sodeca_grade": request.form.get("sodeca_grade"),
+        }
+
+        sgpa = sgpa_cal_civil_sixth(grades)
+        return render_template("civil_sixth.html", results=sgpa)
+
+    return render_template("civil_sixth.html")
+
+def sgpa_cal_civil_sixth(grades):
+    grade_point = {
+        "na": 0, "A++": 10, "A+": 9, "A": 8.5,
+        "B+": 8, "B": 7.5, "C+": 7, "C": 6.5,
+        "D+": 6, "D": 5.5, "E+": 5, "E": 4, "F": 0,
+    }
+
+    total_points_scored = (
+        # THEORY
+        grade_point[grades['wsa_grade']] * 2 +
+        grade_point[grades['sa2_grade']] * 3 +
+        grade_point[grades['ee_grade']] * 3 +
+        grade_point[grades['dss_grade']] * 3 +
+        grade_point[grades['ec_grade']] * 2 +
+        grade_point[grades['dept_elec3_grade']] * 2 +
+        grade_point[grades['dept_elec4_grade']] * 2 +
+
+        # PRACTICAL & SESSIONAL
+        grade_point[grades['eedl_grade']] * 1.5 +
+        grade_point[grades['ssd_lab_grade']] * 1.5 +
+        grade_point[grades['qsv_grade']] * 1 +
+        grade_point[grades['wersd_grade']] * 1 +
+        grade_point[grades['fd_grade']] * 1 +
+        grade_point[grades['sodeca_grade']] * 0.5
+    )
+
+    total_credits = 23.5
+    sgpa = total_points_scored / total_credits
+    sgpa = float(f"{sgpa:.2f}")
+
+    if sgpa >= 10:
+        sgpa = 10.00
+
+    return sgpa
+
+
+
 #------------------------------------------------7th Semester------------------------------------------------------------------------------------------
 
 #7th sem Aids
@@ -869,6 +1160,74 @@ def sgpa_cal_seventh(grades):
 
     return sgpa
 
+# 7th semester CIVIL
+@app.route('/civil_seventh_sem', methods=['GET', 'POST'])
+def civil_seventh_sem():
+    if request.method == "POST":
+        grades = {
+            # THEORY
+            "te_grade": request.form.get("te_grade"),
+            "oe1_grade": request.form.get("oe1_grade"),
+
+            # PRACTICAL & SESSIONAL
+            "rm_lab_grade": request.form.get("rm_lab_grade"),
+            "pp_lab_grade": request.form.get("pp_lab_grade"),
+            "ss_lab_grade": request.form.get("ss_lab_grade"),
+            "emd_lab_grade": request.form.get("emd_lab_grade"),
+            "pt_grade": request.form.get("pt_grade"),
+            "seminar_grade": request.form.get("seminar_grade"),
+            "sodeca_grade": request.form.get("sodeca_grade"),
+        }
+
+        sgpa = sgpa_cal_civil_seventh(grades)
+        return render_template("civil_seventh.html", results=sgpa)
+
+    return render_template("civil_seventh.html")
+
+def sgpa_cal_civil_seventh(grades):
+    grade_point = {
+        "na": 0,
+        "A++": 10,
+        "A+": 9,
+        "A": 8.5,
+        "B+": 8,
+        "B": 7.5,
+        "C+": 7,
+        "C": 6.5,
+        "D+": 6,
+        "D": 5.5,
+        "E+": 5,
+        "E": 4,
+        "F": 0,
+    }
+
+    total_points_scored = (
+        # THEORY
+        grade_point[grades['te_grade']] * 3 +      # Transportation Engineering
+        grade_point[grades['oe1_grade']] * 3 +     # Open Elective-I
+
+        # PRACTICAL & SESSIONAL
+        grade_point[grades['rm_lab_grade']] * 1 +   # Road Material Testing Lab
+        grade_point[grades['pp_lab_grade']] * 1 +   # Professional Practices Lab
+        grade_point[grades['ss_lab_grade']] * 1 +   # Soft Skills Lab
+        grade_point[grades['emd_lab_grade']] * 1 +  # Env. Monitoring & Design Lab
+        grade_point[grades['pt_grade']] * 2.5 +     # Practical Training
+        grade_point[grades['seminar_grade']] * 2 +  # Seminar
+        grade_point[grades['sodeca_grade']] * 0.5   # SODECA
+    )
+
+    total_credits = 15
+    sgpa = total_points_scored / total_credits
+    sgpa = float(f"{sgpa:.2f}")
+
+    if sgpa >= 10:
+        sgpa = 10.00
+
+    return sgpa
+
+
+
+
 
 #------------------------------------------------8th Semester------------------------------------------------------------------------------------------
 #8th sem cse
@@ -945,7 +1304,64 @@ def  sgpa_cal_eighth_sem(grades):
     return sgpa
 
 
+# 8th semester CIVIL
+@app.route('/civil_eighth_sem', methods=['GET', 'POST'])
+def civil_eighth_sem():
+    if request.method == "POST":
+        grades = {
+            # THEORY
+            "ppcm_grade": request.form.get("ppcm_grade"),
+            "oe2_grade": request.form.get("oe2_grade"),
 
+            # PRACTICAL & SESSIONAL
+            "ppcm_lab_grade": request.form.get("ppcm_lab_grade"),
+            "pavement_design_grade": request.form.get("pavement_design_grade"),
+            "project_grade": request.form.get("project_grade"),
+            "sodeca_grade": request.form.get("sodeca_grade"),
+        }
+
+        sgpa = sgpa_cal_civil_eighth(grades)
+        return render_template("civil_eighth.html", results=sgpa)
+
+    return render_template("civil_eighth.html")
+
+def sgpa_cal_civil_eighth(grades):
+    grade_point = {
+        "na": 0,
+        "A++": 10,
+        "A+": 9,
+        "A": 8.5,
+        "B+": 8,
+        "B": 7.5,
+        "C+": 7,
+        "C": 6.5,
+        "D+": 6,
+        "D": 5.5,
+        "E+": 5,
+        "E": 4,
+        "F": 0,
+    }
+
+    total_points_scored = (
+        # THEORY
+        grade_point[grades['ppcm_grade']] * 3 +         # Project Planning & Construction Management
+        grade_point[grades['oe2_grade']] * 3 +          # Open Elective-II
+
+        # PRACTICAL & SESSIONAL
+        grade_point[grades['ppcm_lab_grade']] * 1 +     # Project Planning & Construction Mgmt Lab
+        grade_point[grades['pavement_design_grade']] * 1 +  # Pavement Design
+        grade_point[grades['project_grade']] * 7 +      # Project
+        grade_point[grades['sodeca_grade']] * 0.5       # SODECA
+    )
+
+    total_credits = 15.5
+    sgpa = total_points_scored / total_credits
+    sgpa = float(f"{sgpa:.2f}")
+
+    if sgpa > 10:
+        sgpa = 10.00
+
+    return sgpa
 
 
 

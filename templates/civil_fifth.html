@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends "base.html" %}
+    {% block content%}
+    <h2>5th Semester SGPA Calculator</h2>
+    <div id="result">
+        {% if results %}
+        <h3>Expected SGPA : {{results}}</h3>
+        {% endif %}
+    </div>
+
+    <form action="/civil_fifth_sem" method="POST">
+
+    <!-- THEORY SUBJECTS -->
+    <fieldset>
+        <legend>1. Construction Technology & Equipments:</legend>
+        <label>Grade:</label>
+        <select name="cte_grade" required>
+            <option value="" disabled selected>Select</option>
+            <option value="na">Don't Have</option>
+            <option>A++</option><option>A+</option><option>A</option>
+            <option>B+</option><option>B</option><option>C+</option>
+            <option>C</option><option>D+</option><option>D</option>
+            <option>E+</option><option>E</option><option>F</option>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <legend>2. Structural Analysis - I:</legend>
+        <label>Grade:</label>
+        <select name="sa1_grade" required>
+            <option value="" disabled selected>Select</option>
+            <option value="na">Don't Have</option>
+            <option>A++</option><option>A+</option><option>A</option>
+            <option>B+</option><option>B</option><option>C+</option>
+            <option>C</option><option>D+</option><option>D</option>
+            <option>E+</option><option>E</option><option>F</option>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <legend>3. Design of Concrete Structures:</legend>
+        <label>Grade:</label>
+        <select name="dcs_grade" required>
+            <option value="" disabled selected>Select</option>
+            <option value="na">Don't Have</option>
+            <option>A++</option><option>A+</option><option>A</option>
+            <option>B+</option><option>B</option><option>C+</option>
+            <option>C</option><option>D+</option><option>D</option>
+            <option>E+</option><option>E</option><option>F</option>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <legend>4. Geotechnical Engineering:</legend>
+        <label>Grade:</label>
+        <select name="geo_grade" required>
+            <option value="" disabled selected>Select</option>
+            <option value="na">Don't Have</option>
+            <option>A++</option><option>A+</option><option>A</option>
+            <option>B+</option><option>B</option><option>C+</option>
+            <option>C</option><option>D+</option><option>D</option>
+            <option>E+</option><option>E</option><option>F</option>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <legend>5. Water Resource Engineering:</legend>
+        <label>Grade:</label>
+        <select name="wre_grade" required>
+            <option value="" disabled selected>Select</option>
+            <option value="na">Don't Have</option>
+            <option>A++</option><option>A+</option><option>A</option>
+            <option>B+</option><option>B</option><option>C+</option>
+            <option>C</option><option>D+</option><option>D</option>
+            <option>E+</option><option>E</option><option>F</option>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <legend>6. Departmental Elective - I(Air & Noise Pollution / Disaster Management / Town Planning):</legend>
+        <label>Grade:</label>
+        <select name="de1_grade" required>
+            <option value="" disabled selected>Select</option>
+            <option value="na">Don't Have</option>
+            <option>A++</option><option>A+</option><option>A</option>
+            <option>B+</option><option>B</option><option>C+</option>
+            <option>C</option><option>D+</option><option>D</option>
+            <option>E+</option><option>E</option><option>F</option>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <legend>7. Departmental Elective - II(Repair & Rehabilitation / Ground Improvement / Energy Science):</legend>
+        <label>Grade:</label>
+        <select name="de2_grade" required>
+            <option value="" disabled selected>Select</option>
+            <option value="na">Don't Have</option>
+            <option>A++</option><option>A+</option><option>A</option>
+            <option>B+</option><option>B</option><option>C+</option>
+            <option>C</option><option>D+</option><option>D</option>
+            <option>E+</option><option>E</option><option>F</option>
+        </select>
+    </fieldset>
+
+    <!-- PRACTICAL & SESSIONAL -->
+    <fieldset>
+        <legend>8. Concrete Structures Design (Lab):</legend>
+        <label>Grade:</label>
+        <select name="csd_lab_grade" required>
+            <option value="" disabled selected>Select</option>
+            <option value="na">Don't Have</option>
+            <option>A++</option><option>A+</option><option>A</option>
+            <option>B+</option><option>B</option><option>C+</option>
+            <option>C</option><option>D+</option><option>D</option>
+            <option>E+</option><option>E</option><option>F</option>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <legend>9. Geotechnical Engineering Lab:</legend>
+        <label>Grade:</label>
+        <select name="geo_lab_grade" required>
+            <option value="" disabled selected>Select</option>
+            <option value="na">Don't Have</option>
+            <option>A++</option><option>A+</option><option>A</option>
+            <option>B+</option><option>B</option><option>C+</option>
+            <option>C</option><option>D+</option><option>D</option>
+            <option>E+</option><option>E</option><option>F</option>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <legend>10. Water Resource Engineering Design (Lab):</legend>
+        <label>Grade:</label>
+        <select name="wre_lab_grade" required>
+            <option value="" disabled selected>Select</option>
+            <option value="na">Don't Have</option>
+            <option>A++</option><option>A+</option><option>A</option>
+            <option>B+</option><option>B</option><option>C+</option>
+            <option>C</option><option>D+</option><option>D</option>
+            <option>E+</option><option>E</option><option>F</option>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <legend>11. Industrial Training:</legend>
+        <label>Grade:</label>
+        <select name="it_grade" required>
+            <option value="" disabled selected>Select</option>
+            <option value="na">Don't Have</option>
+            <option>A++</option><option>A+</option><option>A</option>
+            <option>B+</option><option>B</option><option>C+</option>
+            <option>C</option><option>D+</option><option>D</option>
+            <option>E+</option><option>E</option><option>F</option>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <legend>12. SODECA:</legend>
+        <label>Grade:</label>
+        <select name="sodeca_grade" required>
+            <option value="" disabled selected>Select</option>
+            <option value="na">Don't Have</option>
+            <option>A++</option><option>A+</option><option>A</option>
+            <option>B+</option><option>B</option><option>C+</option>
+            <option>C</option><option>D+</option><option>D</option>
+            <option>E+</option><option>E</option><option>F</option>
+        </select>
+    </fieldset>
+
+    <button type="submit">Calculate SGPA</button>
+</form>
+{{%endblock%}}
+</body>
+</html>
