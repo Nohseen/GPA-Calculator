@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='first_year_style.css') }}">
 </head>
 
-<body>
+
 
     <body>
         {% extends "base.html" %}
         {% block content%}
-        <h2>2nd Semester SGPA Calculator</h2>
+        <h2>SGPA Calculator</h2>
         <div id="result">
             {% if results %}
             <h3>Expected SGPA : {{results}}</h3>
@@ -45,7 +45,7 @@
             </fieldset>
 
             <fieldset>
-                <legend>1. Engineering Mathematics-II:</legend>
+                <legend>2. Engineering Mathematics-II:</legend>
                 <label>Grade:</label>
                 <select name="maths2_grade" required>
                     <option value="" disabled selected>Select</option>
@@ -66,7 +66,7 @@
             </fieldset>
 
             <fieldset>
-                <legend>2. Engineering Chemistry:</legend>
+                <legend>3. Engineering Chemistry:</legend>
                 <label>Grade:</label>
                 <select name="chemistry_grade" required>
                     <option value="" disabled selected>Select</option>
@@ -87,7 +87,7 @@
             </fieldset>
 
             <fieldset>
-                <legend>3. Engineering Physics:</legend>
+                <legend>4. Engineering Physics:</legend>
                 <label>Grade:</label>
                 <select name="physics_grade" required>
                     <option value="" disabled selected>Select</option>
@@ -108,7 +108,7 @@
             </fieldset>
 
             <fieldset>
-                <legend>4. Human Values:</legend>
+                <legend>5. Human Values:</legend>
                 <label>Grade:</label>
                 <select name="humanvalues_grade" required>
                     <option value="" disabled selected>Select</option>
@@ -129,7 +129,7 @@
             </fieldset>
 
             <fieldset>
-                <legend>5. Communication Skills:</legend>
+                <legend>6. Communication Skills:</legend>
                 <label>Grade:</label>
                 <select name="commskills_grade" required>
                     <option value="" disabled selected>Select</option>
@@ -150,7 +150,7 @@
             </fieldset>
 
             <fieldset>
-                <legend>6. Basic Mechanical Engineering:</legend>
+                <legend>7. Basic Mechanical Engineering:</legend>
                 <label>Grade:</label>
                 <select name="mech_grade" required>
                     <option value="" disabled selected>Select</option>
@@ -171,7 +171,7 @@
             </fieldset>
 
             <fieldset>
-                <legend>7. Programming for Problem Solving:</legend>
+                <legend>8. Programming for Problem Solving:</legend>
                 <label>Grade:</label>
                 <select name="progsolving_grade" required>
                     <option value="" disabled selected>Select</option>
@@ -192,7 +192,7 @@
             </fieldset>
 
             <fieldset>
-                <legend>8. Basic Civil Engineering:</legend>
+                <legend>9. Basic Civil Engineering:</legend>
                 <label>Grade:</label>
                 <select name="civil_grade" required>
                     <option value="" disabled selected>Select</option>
@@ -213,7 +213,7 @@
             </fieldset>
 
             <fieldset>
-                <legend>9. Basic Electrical Engineering:</legend>
+                <legend>10. Basic Electrical Engineering:</legend>
                 <label>Grade:</label>
                 <select name="electrical_grade" required>
                     <option value="" disabled selected>Select</option>
@@ -235,7 +235,7 @@
 
             <!-- LAB SUBJECTS -->
             <fieldset>
-                <legend>10. Engineering Chemistry Lab:</legend>
+                <legend>11. Engineering Chemistry Lab:</legend>
                 <label>Grade:</label>
                 <select name="chemlab_grade" required>
                     <option value="" disabled selected>Select</option>
@@ -256,7 +256,7 @@
             </fieldset>
 
             <fieldset>
-                <legend>11. Engineering Physics Lab:</legend>
+                <legend>12. Engineering Physics Lab:</legend>
                 <label>Grade:</label>
                 <select name="physlab_grade" required>
                     <option value="" disabled selected>Select</option>
@@ -277,7 +277,7 @@
             </fieldset>
 
             <fieldset>
-                <legend>12. Human Values Activities:</legend>
+                <legend>13. Human Values Activities:</legend>
                 <label>Grade:</label>
                 <select name="hv_activities_grade" required>
                     <option value="" disabled selected>Select</option>
@@ -298,7 +298,7 @@
             </fieldset>
 
             <fieldset>
-                <legend>13. Language Lab:</legend>
+                <legend>14. Language Lab:</legend>
                 <label>Grade:</label>
                 <select name="langlab_grade" required>
                     <option value="" disabled selected>Select</option>
@@ -319,7 +319,7 @@
             </fieldset>
 
             <fieldset>
-                <legend>14. Manufacturing Practices Workshop:</legend>
+                <legend>15. Manufacturing Practices Workshop:</legend>
                 <label>Grade:</label>
                 <select name="mpworkshop_grade" required>
                     <option value="" disabled selected>Select</option>
@@ -340,7 +340,7 @@
             </fieldset>
 
             <fieldset>
-                <legend>15. Computer Programming Lab:</legend>
+                <legend>16. Computer Programming Lab:</legend>
                 <label>Grade:</label>
                 <select name="cplab_grade" required>
                     <option value="" disabled selected>Select</option>
@@ -361,7 +361,7 @@
             </fieldset>
 
             <fieldset>
-                <legend>16. Basic Civil Engineering Lab:</legend>
+                <legend>17. Basic Civil Engineering Lab:</legend>
                 <label>Grade:</label>
                 <select name="civillab_grade" required>
                     <option value="" disabled selected>Select</option>
@@ -382,7 +382,7 @@
             </fieldset>
 
             <fieldset>
-                <legend>17. Basic Electrical Engineering Lab:</legend>
+                <legend>18. Basic Electrical Engineering Lab:</legend>
                 <label>Grade:</label>
                 <select name="electricallab_grade" required>
                     <option value="" disabled selected>Select</option>
@@ -403,7 +403,7 @@
             </fieldset>
 
             <fieldset>
-                <legend>18. Computer Aided Machine Drawing:</legend>
+                <legend>19. Computer Aided Machine Drawing:</legend>
                 <label>Grade:</label>
                 <select name="camd_grade" required>
                     <option value="" disabled selected>Select</option>
@@ -424,7 +424,7 @@
             </fieldset>
 
             <fieldset>
-                <legend>19. Computer Aided Engineering Graphics:</legend>
+                <legend>20. Computer Aided Engineering Graphics:</legend>
                 <label>Grade:</label>
                 <select name="caeg_grade" required>
                     <option value="" disabled selected>Select</option>
@@ -446,7 +446,7 @@
 
             <!-- SODECA -->
             <fieldset>
-                <legend>20. SODECA (NCC/NSS/Sports):</legend>
+                <legend>21. SODECA (NCC/NSS/Sports):</legend>
                 <label>Grade:</label>
                 <select name="sodeca_grade" required>
                     <option value="" disabled selected>Select</option>
@@ -472,6 +472,6 @@
         {%endblock%}
     </body>
 
-</body>
+
 
 </html>

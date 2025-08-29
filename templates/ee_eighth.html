@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends "base.html" %}
+    {% block content%}
+    <h2>8th Semester SGPA Calculator</h2>
+    <div id="result">
+        {% if results %}
+        <h3>Expected SGPA : {{results}}</h3>
+        {% endif %}
+    </div>
+    <form action="/ee_eighth" method="POST">
+    <!-- THEORY SUBJECTS -->
+    <fieldset>
+        <legend>1. HVDC Transmission System:</legend>
+        <label>Grade:</label>
+        <select name="hvdc_grade" required>
+            <option value="" disabled selected>Select</option>
+            <option value="na">Don't Have</option>
+            <option>A++</option><option>A+</option><option>A</option>
+            <option>B+</option><option>B</option><option>C+</option>
+            <option>C</option><option>D+</option><option>D</option>
+            <option>E+</option><option>E</option><option>F</option>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <legend>2. Line Commutated and Active Rectifiers:</legend>
+        <label>Grade:</label>
+        <select name="rectifier_grade" required>
+            <option value="" disabled selected>Select</option>
+            <option value="na">Don't Have</option>
+            <option>A++</option><option>A+</option><option>A</option>
+            <option>B+</option><option>B</option><option>C+</option>
+            <option>C</option><option>D+</option><option>D</option>
+            <option>E+</option><option>E</option><option>F</option>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <legend>3. Advanced Electric Drives:</legend>
+        <label>Grade:</label>
+        <select name="drives_grade" required>
+            <option value="" disabled selected>Select</option>
+            <option value="na">Don't Have</option>
+            <option>A++</option><option>A+</option><option>A</option>
+            <option>B+</option><option>B</option><option>C+</option>
+            <option>C</option><option>D+</option><option>D</option>
+            <option>E+</option><option>E</option><option>F</option>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <legend>4. Open Elective-II:</legend>
+        <label>Grade:</label>
+        <select name="oe2_grade" required>
+            <option value="" disabled selected>Select</option>
+            <option value="na">Don't Have</option>
+            <option>A++</option><option>A+</option><option>A</option>
+            <option>B+</option><option>B</option><option>C+</option>
+            <option>C</option><option>D+</option><option>D</option>
+            <option>E+</option><option>E</option><option>F</option>
+        </select>
+    </fieldset>
+
+    <!-- PRACTICAL & SESSIONAL -->
+    <fieldset>
+        <legend>5. Energy Systems Lab:</legend>
+        <label>Grade:</label>
+        <select name="energylab_grade" required>
+            <option value="" disabled selected>Select</option>
+            <option value="na">Don't Have</option>
+            <option>A++</option><option>A+</option><option>A</option>
+            <option>B+</option><option>B</option><option>C+</option>
+            <option>C</option><option>D+</option><option>D</option>
+            <option>E+</option><option>E</option><option>F</option>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <legend>6. Project:</legend>
+        <label>Grade:</label>
+        <select name="project_grade" required>
+            <option value="" disabled selected>Select</option>
+            <option value="na">Don't Have</option>
+            <option>A++</option><option>A+</option><option>A</option>
+            <option>B+</option><option>B</option><option>C+</option>
+            <option>C</option><option>D+</option><option>D</option>
+            <option>E+</option><option>E</option><option>F</option>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <legend>7. SODECA:</legend>
+        <label>Grade:</label>
+        <select name="sodeca_grade" required>
+            <option value="" disabled selected>Select</option>
+            <option value="na">Don't Have</option>
+            <option>A++</option><option>A+</option><option>A</option>
+            <option>B+</option><option>B</option><option>C+</option>
+            <option>C</option><option>D+</option><option>D</option>
+            <option>E+</option><option>E</option><option>F</option>
+        </select>
+    </fieldset>
+
+    <br>
+    <button type="submit">Calculate SGPA</button>
+</form>
+{% endblock %}
+</body>
+</html>
