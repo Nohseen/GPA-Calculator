@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {% extends "base.html" %}
+    {% block content%}
+    <h2>3th Semester SGPA Calculator</h2>
+    <div id="result">
+        {% if results %}
+        <h3>Expected SGPA : {{results}}</h3>
+        {% endif %}
+    </div>
+
+    <form action="/me_third" method="POST">
+        <!-- THEORY SUBJECTS -->
+        <fieldset>
+            <legend>1. Advance Engineering Mathematics-I:</legend>
+            <label>Grade:</label>
+            <select name="maths_grade" required>
+                <option value="" disabled selected>Select</option>
+                <option value="na">Don't Have</option>
+                <option>A++</option>
+                <option>A+</option>
+                <option>A</option>
+                <option>B+</option>
+                <option>B</option>
+                <option>C+</option>
+                <option>C</option>
+                <option>D+</option>
+                <option>D</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend>2. Tech. Comm./Managerial Economics and Financial Accounting:</legend>
+            <label>Grade:</label>
+            <select name="hsmc_grade" required>
+                <option value="" disabled selected>Select</option>
+                <!-- same grade options as above -->
+                <option value="na">Don't Have</option>
+                <option>A++</option>
+                <option>A+</option>
+                <option>A</option>
+                <option>B+</option>
+                <option>B</option>
+                <option>C+</option>
+                <option>C</option>
+                <option>D+</option>
+                <option>D</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend>3. Engineering Mechanics:</legend>
+            <label>Grade:</label>
+            <select name="mech_grade" required>
+                <option value="" disabled selected>Select</option>
+                <!-- options -->
+                <option value="na">Don't Have</option>
+                <option>A++</option>
+                <option>A+</option>
+                <option>A</option>
+                <option>B+</option>
+                <option>B</option>
+                <option>C+</option>
+                <option>C</option>
+                <option>D+</option>
+                <option>D</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend>4. Engineering Thermodynamics:</legend>
+            <label>Grade:</label>
+            <select name="thermo_grade" required>
+                <option value="" disabled selected>Select</option>
+                <!-- options as above -->
+                <option value="na">Don't Have</option>
+                <option>A++</option>
+                <option>A+</option>
+                <option>A</option>
+                <option>B+</option>
+                <option>B</option>
+                <option>C+</option>
+                <option>C</option>
+                <option>D+</option>
+                <option>D</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend>5. Materials Science and Engineering:</legend>
+            <label>Grade:</label>
+            <select name="material_grade" required>
+                <option value="" disabled selected>Select</option>
+                <!-- options -->
+                <option value="na">Don't Have</option>
+                <option>A++</option>
+                <option>A+</option>
+                <option>A</option>
+                <option>B+</option>
+                <option>B</option>
+                <option>C+</option>
+                <option>C</option>
+                <option>D+</option>
+                <option>D</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend>6. Mechanics of Solids:</legend>
+            <label>Grade:</label>
+            <select name="solidmech_grade" required>
+                <option value="" disabled selected>Select</option>
+                <!-- options -->
+                <option value="na">Don't Have</option>
+                <option>A++</option>
+                <option>A+</option>
+                <option>A</option>
+                <option>B+</option>
+                <option>B</option>
+                <option>C+</option>
+                <option>C</option>
+                <option>D+</option>
+                <option>D</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
+            </select>
+        </fieldset>
+        <!-- PRACTICAL SUBJECTS -->
+        <fieldset>
+            <legend>7. Machine Drawing Practice:</legend>
+            <label>Grade:</label>
+            <select name="drawing_grade" required>
+                <option value="" disabled selected>Select</option>
+                <!-- options -->
+                <option value="na">Don't Have</option>
+                <option>A++</option>
+                <option>A+</option>
+                <option>A</option>
+                <option>B+</option>
+                <option>B</option>
+                <option>C+</option>
+                <option>C</option>
+                <option>D+</option>
+                <option>D</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend>8. Materials Testing Lab:</legend>
+            <label>Grade:</label>
+            <select name="testinglab_grade" required>
+                <option value="" disabled selected>Select</option>
+                <!-- options -->
+                <option value="na">Don't Have</option>
+                <option>A++</option>
+                <option>A+</option>
+                <option>A</option>
+                <option>B+</option>
+                <option>B</option>
+                <option>C+</option>
+                <option>C</option>
+                <option>D+</option>
+                <option>D</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend>9. Basic Mechanical Engineering Lab:</legend>
+            <label>Grade:</label>
+            <select name="bmechlab_grade" required>
+                <option value="" disabled selected>Select</option>
+                <!-- options -->
+                <option value="na">Don't Have</option>
+                <option>A++</option>
+                <option>A+</option>
+                <option>A</option>
+                <option>B+</option>
+                <option>B</option>
+                <option>C+</option>
+                <option>C</option>
+                <option>D+</option>
+                <option>D</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend>10. Programming using MATLAB:</legend>
+            <label>Grade:</label>
+            <select name="matlab_grade" required>
+                <option value="" disabled selected>Select</option>
+                <!-- options -->
+                <option value="na">Don't Have</option>
+                <option>A++</option>
+                <option>A+</option>
+                <option>A</option>
+                <option>B+</option>
+                <option>B</option>
+                <option>C+</option>
+                <option>C</option>
+                <option>D+</option>
+                <option>D</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend>11. Industrial Training:</legend>
+            <label>Grade:</label>
+            <select name="training_grade" required>
+                <option value="" disabled selected>Select</option>
+                <!-- options -->
+                <option value="na">Don't Have</option>
+                <option>A++</option>
+                <option>A+</option>
+                <option>A</option>
+                <option>B+</option>
+                <option>B</option>
+                <option>C+</option>
+                <option>C</option>
+                <option>D+</option>
+                <option>D</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend>12. Social Outreach, Discipline & Extra Curricular Activities:</legend>
+            <label>Grade:</label>
+            <select name="sodeca_grade" required>
+                <option value="" disabled selected>Select</option>
+                <!-- options -->
+                <option value="na">Don't Have</option>
+                <option>A++</option>
+                <option>A+</option>
+                <option>A</option>
+                <option>B+</option>
+                <option>B</option>
+                <option>C+</option>
+                <option>C</option>
+                <option>D+</option>
+                <option>D</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
+            </select>
+        </fieldset>
+        <button type="submit">Calculate SGPA</button>
+    </form>
+    {%endblock%}
+</body>
+
+</html>

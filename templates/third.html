@@ -6,6 +6,8 @@
     <title>Document</title>
 </head>
 <body>
+    {% extends "base.html" %}
+    {% block content%}
     <h2>3rd Semester SGPA Calculator</h2>
     <div>
         {% if results %}
@@ -176,6 +178,8 @@
         <br>
         <button type="submit">Calculate SGPA</button>
     </form>
+
+    {%endblock%}
 </body>
 
 </html>
