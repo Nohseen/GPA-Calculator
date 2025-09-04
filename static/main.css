@@ -1,24 +1,13 @@
 /* General Page Styling */
 body {
-    margin: 0;
+    margin: 10;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, rgba(240, 248, 255, 0.9), rgba(221, 221, 255, 0.9));
     min-height: 100vh;
     padding-top: 0px; /* space for sticky nav */
 }
 
-/* Sticky Navbar */
-nav {
-    position: sticky;
-    top: 0;
-    background: #d9b3ff; /* light purple */
-    padding: 12px;
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    z-index: 1000;
-}
+
 
 /*result section*/
 #result {
@@ -36,6 +25,7 @@ h2 {
 
 /* Frosted Glass Effect for Fieldsets */
 fieldset {
+    display: flex;
     margin: 20px auto;
     max-width: 600px;
     padding: 20px;
@@ -51,6 +41,8 @@ fieldset {
 legend {
     font-weight: bold;
     color: #0b5567;
+    text-align: left;
+    align-self: flex-start;
 }
 
 /* Dropdown Styling */
@@ -61,12 +53,12 @@ select {
     border: 1px solid #ccc;
 }
 
-/* Submit Button */
-input[type="submit"] {
-    display: block;
-    margin: 20px auto;
+/* Submit Button */  /*input[type="submit"]*/
+ button {
+    display: flex;
+    margin: 0px auto;
     padding: 12px 25px;
-    background: #6a0dad; /* purple shade */
+    background: #0b5567; /* teal shade */
     color: white;
     font-size: 16px;
     font-weight: bold;
@@ -76,10 +68,8 @@ input[type="submit"] {
     transition: all 0.3s ease;
 }
 
-input[type="submit"]:hover {
-    background: #4b0082;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    transform: scale(1.05);
+ button:hover {
+  background: #09424f;
 }
 
 /* Footer / Bottom Info */

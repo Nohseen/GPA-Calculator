@@ -3,16 +3,21 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>VI Semester SGPA Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGPA Calculator-6th Semester IT</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
 </head>
 
 <body>
-    <div>
+     {% extends "nav.html" %}
+    {% block content%}
+    <h2>Information Technology 6th Semester SGPA Calculator</h2>
+    <div id="resutl">
         {% if results %}
         <h3>Expected SGPA : {{results}}</h3>
         {% endif %}
     </div>
-    <h2>Enter Marks for Engineering Subjects</h2>
+    
     <form action="/it_sixth" method="POST">
         <fieldset>
             <legend>1.Digital Image Processing:</legend>
@@ -325,9 +330,10 @@
             </label>
         </fieldset>
 
-        <button type="submit">Submit</button>
+        <button type="submit">Let's Calculate</button>
 
         </form>
+        {%endblock%}
 </body>
 
 </html>

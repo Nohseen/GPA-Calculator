@@ -4,13 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>7th Semester CSE SGPA Calculator</title>
+    <title>Sgpa Calculator-7th sem cse</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
 </head>
 
 <body>
-    <h2>7th Semester CSE SGPA Calculator</h2>
+     {% extends "nav.html" %}
+    {% block content%}
+    <h2>Computer Science Engineering 7th Semester SGPA Calculator</h2>
 
-    <div>
+    <div id="result">
         {% if results %}
         <h3>Expected SGPA : {{results}}</h3>
         {% endif %}
@@ -157,8 +160,9 @@
                 <option>F</option>
             </select><br><br>
         </fieldset>
-        <button type="submit">Calculate SGPA</button>
+        <button type="submit">Let's Calculate</button>
     </form>
+    {%endblock%}
 </body>
 
 </html>

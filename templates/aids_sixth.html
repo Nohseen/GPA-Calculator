@@ -4,20 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>6th Sem</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='sixthstyle.css') }}">
+    <title>Sgpa Calculator-6th sem ai&ds</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
 </head>
 
 <body>
-    {% extends "base.html" %}
-
-    {% block content %}
-    <div>
+    {% extends "nav.html" %}
+    {% block content%}
+     <h2>Artificial Intelligence and Data Science 6th Semester SGPA Calculator</h2>
+    <div id="result">
         {% if results %}
         <h3>Expected SGPA : {{results}}</h3>
         {% endif %}
     </div>
-    <h2>Enter Marks for Engineering Subjects</h2>
+    
     <form action="/aids_sixth" method="post">
         <fieldset>
             <legend>1. Digital Image Processing</legend>
@@ -324,7 +324,7 @@
             </label>
         </fieldset>
         <br>
-        <button type="submit">Submit</button>
+        <button type="submit">Let's Calculate</button>
     </form>
     {% endblock %}
     

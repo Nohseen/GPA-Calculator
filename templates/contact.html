@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | SGPA Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <style>
+        h2 {
+            color: #333;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: auto;
+            padding: 10px;
+            color: #333;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    {% extends "nav.html" %}
+
+    {% block content %}
+    
+        <!-- <div class="form-container">
+            <h1>Contact Us</h1>
+
+            <h2>Get in Touch</h2>
+            <span><h6>Email :</h6><p>nohseen.0111@gmail.com</p></span>
+            <p>
+                Have questions, suggestions, or feedback about the SGPA Calculator?  
+                Feel free to mail us.
+            </p>
+
+            
+        </div> -->
+        <div class="form-container">
+            <h1>Contact</h1>
+
+            
+            <p>Have questions, suggestions, or feedback about the SGPA Calculator? Feel free to mail.</p>
+
+            <div class="contact-links">
+                <p>Email: <a href="nohseen.0111@gmail.com">nohseen.0111@gmail.com</a></p>
+                <p>GitHub: <a href="https://github.com/Nohseen" target="_blank">Nohseen</a></p>
+            </div>
+        </div>
+
+        <footer>
+            &copy; 2025 SGPA Calculator | Built with Sky.
+        </footer>
+    {% endblock %}
+    
+</body>
+</html>

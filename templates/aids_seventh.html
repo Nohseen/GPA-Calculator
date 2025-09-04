@@ -4,21 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>7th Semester AIDS SGPA</title>
+    <title>Sgpa Calculator-7th sem ai&ds</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
 </head>
 
 <body>
-    <h2>7th Semester AI&DS SGPA Calculator</h2>
-    <div>
+    {% extends "nav.html" %}
+    {% block content%}
+     <h2>Artificial Intelligence and Data Science 7th Semester SGPA Calculator</h2>
+    <div id="result">
         {% if results %}
         <h3>Expected SGPA : {{results}}</h3>
         {% endif %}
     </div>
-    <h2>7th Semester - AIDS SGPA Calculator</h2>
+    
     <form action="/aids_seventh" method="POST">
 
         <fieldset>
-            <label>Big Data Analytics</label>
+            <legend>1. Big Data Analytics</legend>
+            <label>Grade :</label>
             <select name="bda_grade" required>
                 <option value="" disabled selected>Select</option>
                 <option value="na">Don't Have</option>
@@ -38,7 +42,8 @@
         </fieldset>
 
         <fieldset>
-            <label>Open Elective - I</label>
+            <legend>2. Open Elective - I</legend>
+            <label>Grade :</label>
             <select name="oe1_grade" required>
                 <option value="" disabled selected>Select</option>
                 <option value="na">Don't Have</option>
@@ -58,7 +63,8 @@
         </fieldset>
 
         <fieldset>
-            <label>Big Data Analytics Lab</label>
+            <legend>3. Big Data Analytics Lab</legend>
+            <label>Grade :</label>
             <select name="bda_lab_grade" required>
                 <option value="" disabled selected>Select</option>
                 <option value="na">Don't Have</option>
@@ -78,7 +84,8 @@
         </fieldset>
 
         <fieldset>
-            <label>R Programming Lab</label>
+            <legend>4. R Programming Lab</legend>
+            <label>Grade :</label>
             <select name="rplab_grade" required>
                 <option value="" disabled selected>Select</option>
                 <option value="na">Don't Have</option>
@@ -98,7 +105,8 @@
         </fieldset>
 
         <fieldset>
-            <label>Industrial Training</label>
+            <legend>5. Industrial Training</legend>
+            <label>Grade :</label>
             <select name="it_grade" required>
                 <option value="" disabled selected>Select</option>
                 <option value="na">Don't Have</option>
@@ -118,7 +126,8 @@
         </fieldset>
 
         <fieldset>
-            <label>Seminar</label>
+            <legend>6. Seminar</legend>
+            <label>Grade :</label>
             <select name="seminar_grade" required>
                 <option value="" disabled selected>Select</option>
                 <option value="na">Don't Have</option>
@@ -138,7 +147,8 @@
         </fieldset>
 
         <fieldset>
-            <label>Social Outreach, Discipline & Extra Curricular Activities</label>
+            <legend>7. Social Outreach, Discipline & Extra Curricular Activities</legend>
+            <label>Grade :</label>
             <select name="sodeca_grade" required>
                 <option value="" disabled selected>Select</option>
                 <option value="na">Don't Have</option>
@@ -157,8 +167,9 @@
             </select>
         </fieldset>
 
-        <button type="submit">Submit</button>
+        <button type="submit">Let's Calculate</button>
     </form>
+    {%endblock%}
 </body>
 
 </html>

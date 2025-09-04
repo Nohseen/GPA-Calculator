@@ -11,11 +11,7 @@ def startpage():
         if semester == "1":
             if branch in ['aids', 'cse', 'it', 'civil', 'ee', 'me']:
                 return redirect('/first_year_cs')
-            
-        if semester == "2":
-            if branch in ['aids', 'cse', 'it', 'civil', 'ee', 'me']:
-                return redirect('/first_year_cs')
-        
+                  
         if semester == "3":
             if branch in ['aids', 'cse', 'it']:
                 print('aids,cse,it')
@@ -101,6 +97,17 @@ def startpage():
                 return redirect('/me_eighth')
 
     return render_template('home.html')
+
+#Section About
+@app.route('/about', methods=['GET'])
+def about():
+    return render_template('about.html')
+
+#Section Contact
+@app.route('/contact', methods=['GET'])
+def contact():
+    return render_template('contact.html')
+
 
 # ------------------------------------------First Year Calculation--------------------------------------------------------------------------------------------------------------------------
 # AIDS/CSE/IT
@@ -2034,55 +2041,6 @@ def sgpa_cal_me_eighth(grades):
     if sgpa > 10:
         sgpa = 10.00
     return sgpa
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 if __name__ == '__main__':
     app.run(debug = True)

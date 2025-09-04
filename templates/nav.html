@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='nav.css') }}">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-title">SGPA Calculator</div>
+
+    <ul class="nav-links">
+      <li><a href="{{ url_for('startpage') }}">Home</a></li>
+      <li><a href="{{ url_for('about') }}">About</a></li>
+      <li><a href="{{ url_for('contact') }}">Contact</a></li>
+    </ul>
+
+    <!-- Hamburger Menu Button (Mobile) -->
+    <span class="menu-btn" onclick="openSidebar()">&#9776;</span>
+  </nav>
+
+  <!-- Sidebar (Mobile Nav) -->
+  <div id="sidebar" class="sidebar">
+    <span class="closebtn" onclick="closeSidebar()">&times;</span>
+    <a href="{{ url_for('startpage') }}">Home</a>
+    <a href="{{ url_for('about') }}">About</a>
+    <a href="{{ url_for('contact') }}">Contact</a>
+  </div>
+  </nav>
+
+  <!-- Page content -->
+  {% block content %}{% endblock %}
+
+  <!-- Sidebar Script -->
+  <script>
+    function openSidebar() {
+      document.getElementById("sidebar").style.width = "250px";
+    }
+    function closeSidebar() {
+      document.getElementById("sidebar").style.width = "0";
+    }
+  </script>
+</body>
+</html>

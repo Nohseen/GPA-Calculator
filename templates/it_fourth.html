@@ -3,11 +3,20 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>4th Semester IT SGPA Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGPA Calculator-4th Semester IT</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
 </head>
 
 <body>
-    <h2>4th Semester Information Technology - SGPA Calculator</h2>
+    {% extends "nav.html" %}
+    {% block content%}
+    <h2>Information Technology 4th Semester SGPA Calculator</h2>
+    <div id="result">
+        {% if results %}
+        <h3>Expected SGPA : {{results}}</h3>
+        {% endif %}
+    </div>
     <form method="POST" action="/it_fourth">
         <fieldset>
             <legend>1. Discrete Mathematics Structure</legend>
@@ -24,7 +33,9 @@
                 <option>C</option>
                 <option>D+</option>
                 <option>D</option>
-                <option>na</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
             </select><br><br>
         </fieldset>
 
@@ -43,7 +54,9 @@
                 <option>C</option>
                 <option>D+</option>
                 <option>D</option>
-                <option>na</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
             </select><br><br>
         </fieldset>
 
@@ -62,7 +75,9 @@
                 <option>C</option>
                 <option>D+</option>
                 <option>D</option>
-                <option>na</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
             </select><br><br>
         </fieldset>
         <fieldset>
@@ -80,7 +95,9 @@
                 <option>C</option>
                 <option>D+</option>
                 <option>D</option>
-                <option>na</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
             </select><br><br>
         </fieldset>
 
@@ -99,7 +116,9 @@
                 <option>C</option>
                 <option>D+</option>
                 <option>D</option>
-                <option>na</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
             </select><br><br>
         </fieldset>
 
@@ -118,7 +137,9 @@
                 <option>C</option>
                 <option>D+</option>
                 <option>D</option>
-                <option>na</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
             </select><br><br>
         </fieldset>
 
@@ -137,7 +158,9 @@
                 <option>C</option>
                 <option>D+</option>
                 <option>D</option>
-                <option>na</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
             </select><br><br>
         </fieldset>
 
@@ -156,7 +179,9 @@
                 <option>C</option>
                 <option>D+</option>
                 <option>D</option>
-                <option>na</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
             </select><br><br>
         </fieldset>
 
@@ -175,7 +200,9 @@
                 <option>C</option>
                 <option>D+</option>
                 <option>D</option>
-                <option>na</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
             </select><br><br>
         </fieldset>
 
@@ -195,7 +222,9 @@
                 <option>C</option>
                 <option>D+</option>
                 <option>D</option>
-                <option>na</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
             </select><br><br>
         </fieldset>
 
@@ -214,7 +243,9 @@
                 <option>C</option>
                 <option>D+</option>
                 <option>D</option>
-                <option>na</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
             </select><br><br>
         </fieldset>
 
@@ -233,7 +264,9 @@
                 <option>C</option>
                 <option>D+</option>
                 <option>D</option>
-                <option>na</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
             </select><br><br>
         </fieldset>
 
@@ -252,11 +285,14 @@
                 <option>C</option>
                 <option>D+</option>
                 <option>D</option>
-                <option>na</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
             </select><br><br>
         </fieldset>
-        <button type="submit">Calculate SGPA</button>
+        <button type="submit">Let's Calculate</button>
     </form>
+    {%endblock%}
 </body>
 
 </html>

@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home | Sgpa Calculator</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
 </head>
 
 <body>
-    {% extends "base.html" %}
+    {% extends "nav.html" %}
 
     {% block content %}
 
@@ -32,8 +32,7 @@
             <label>Select Semester:
                 <select name="semester" required>
                     <option value="" disabled selected>Select</option>
-                    <option value="1">1st Sem</option>
-                    <option value="2">2nd Sem</option>
+                    <option value="1">First Year</option>
                     <option value="3">3rd Sem</option>
                     <option value="4">4th Sem</option>
                     <option value="5">5th Sem</option>
@@ -46,6 +45,9 @@
             <br>
             <button type="submit">Submit</button>
         </form>
+        <p id="note"><b>Note:</b> If you don't have a particular subject in your semester, please select the "Don't Have" option from the dropdown.</p>
+
+        
     </div>
 
     {% endblock %}
