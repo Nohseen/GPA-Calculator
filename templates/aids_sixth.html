@@ -6,18 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sgpa Calculator-6th sem ai&ds</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/graduation hat favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/graduation hat favicon.png">
+    <link rel="apple-touch-icon" href="/static/graduation hat favicon.png">
 </head>
 
 <body>
     {% extends "nav.html" %}
     {% block content%}
-     <h2>Artificial Intelligence and Data Science 6th Semester SGPA Calculator</h2>
+    <h2>Artificial Intelligence and Data Science 6th Semester SGPA Calculator</h2>
     <div id="result">
         {% if results %}
         <h3>Expected SGPA : {{results}}</h3>
         {% endif %}
     </div>
-    
+
     <form action="/aids_sixth" method="post">
         <fieldset>
             <legend>1. Digital Image Processing</legend>
@@ -212,10 +215,10 @@
                 </select>
             </label>
         </fieldset>
-        
-        
-        
-         
+
+
+
+
         <!-- Practical Subjects -->
         <fieldset>
             <legend>10. Digital Image Processing Lab</legend>
@@ -327,7 +330,7 @@
         <button type="submit">Let's Calculate</button>
     </form>
     {% endblock %}
-    
+
 </body>
 
 </html>

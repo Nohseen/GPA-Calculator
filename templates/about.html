@@ -6,19 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | SGPA Calculator</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/graduation hat favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/graduation hat favicon.png">
+    <link rel="apple-touch-icon" href="/static/graduation hat favicon.png">
     <style>
-     
-    h2{
-        color : #333
-    }
+        h2 {
+            color: #333
+        }
 
-    footer {
-    text-align: center;
-    margin-top: auto;
-    padding: 10px;
-    color: #333;
-    font-size: 14px;
-}
+        footer {
+            text-align: center;
+            margin-top: auto;
+            padding: 10px;
+            color: #333;
+            font-size: 14px;
+        }
     </style>
 </head>
 
@@ -26,47 +28,47 @@
     {% extends "nav.html" %}
 
     {% block content %}
-    
-        <div class="form-container">
-            <h1>About</h1>
 
-            <h2>Objective</h2>
-            <p>
-                The SGPA Calculator is a web application built using <strong>Flask</strong>.
-                It has been developed with the objective of helping students calculate their
-                <strong>Semester Grade Point Average (SGPA)</strong> quickly and accurately.
-                By entering the obtained grades, students can instantly compute their SGPA
-                without the need for manual calculations.
-            </p>
+    <div class="form-container">
+        <h1>About</h1>
 
-            <h2>Why RTU Kota?</h2>
-            <p>
-                This project is specifically designed for students of <strong>Rajasthan Technical University (RTU),
-                    Kota</strong>.
-                Since the initial result declaration provided by RTU only displays the <em>grades</em> for each subject,
-                students are left without an official SGPA value for that semester.
-                This calculator bridges that gap by allowing students to enter their grades
-                and get the precise SGPA based on their semester's credit structure.
-            </p>
+        <h2>Objective</h2>
+        <p>
+            The SGPA Calculator is a web application built using <strong>Flask</strong>.
+            It has been developed with the objective of helping students calculate their
+            <strong>Semester Grade Point Average (SGPA)</strong> quickly and accurately.
+            By entering the obtained grades, students can instantly compute their SGPA
+            without the need for manual calculations.
+        </p>
 
-            <h2>Purpose</h2>
-            <p>
-                The primary purpose of this project is to make academic tracking easier for RTU students.
-                By providing a simple and user-friendly platform, students can:
-            </p>
-            <ul>
-                <li>Calculate their SGPA instantly after results are declared.</li>
-                <li>Track performance across semesters.</li>
-                <li>Plan academic improvements by knowing their exact score.</li>
-            </ul>
+        <h2>Why RTU Kota?</h2>
+        <p>
+            This project is specifically designed for students of <strong>Rajasthan Technical University (RTU),
+                Kota</strong>.
+            Since the initial result declaration provided by RTU only displays the <em>grades</em> for each subject,
+            students are left without an official SGPA value for that semester.
+            This calculator bridges that gap by allowing students to enter their grades
+            and get the precise SGPA based on their semester's credit structure.
+        </p>
 
-        </div>
+        <h2>Purpose</h2>
+        <p>
+            The primary purpose of this project is to make academic tracking easier for RTU students.
+            By providing a simple and user-friendly platform, students can:
+        </p>
+        <ul>
+            <li>Calculate their SGPA instantly after results are declared.</li>
+            <li>Track performance across semesters.</li>
+            <li>Plan academic improvements by knowing their exact score.</li>
+        </ul>
 
-        <footer>
-                &copy; 2025 SGPA Calculator | Built with Sky.
-        </footer>
-        {%endblock%}
-    
+    </div>
+
+    <footer>
+        &copy; 2025 SGPA Calculator | Built with Sky.
+    </footer>
+    {%endblock%}
+
 </body>
 
 </html>

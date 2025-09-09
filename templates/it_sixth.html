@@ -6,10 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SGPA Calculator-6th Semester IT</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/graduation hat favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/graduation hat favicon.png">
+    <link rel="apple-touch-icon" href="/static/graduation hat favicon.png">
 </head>
 
 <body>
-     {% extends "nav.html" %}
+    {% extends "nav.html" %}
     {% block content%}
     <h2>Information Technology 6th Semester SGPA Calculator</h2>
     <div id="resutl">
@@ -17,7 +20,7 @@
         <h3>Expected SGPA : {{results}}</h3>
         {% endif %}
     </div>
-    
+
     <form action="/it_sixth" method="POST">
         <fieldset>
             <legend>1.Digital Image Processing:</legend>
@@ -332,8 +335,8 @@
 
         <button type="submit">Let's Calculate</button>
 
-        </form>
-        {%endblock%}
+    </form>
+    {%endblock%}
 </body>
 
 </html>

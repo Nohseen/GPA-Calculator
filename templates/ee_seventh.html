@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sgpa Calculator-7th sem eletrical</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/graduation hat favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/graduation hat favicon.png">
+    <link rel="apple-touch-icon" href="/static/graduation hat favicon.png">
 </head>
+
 <body>
     {% extends "nav.html" %}
     {% block content%}
@@ -17,200 +22,201 @@
     </div>
     <form action="/ee_seventh" method="POST">
 
-    <!-- THEORY SUBJECTS -->
-    <fieldset>
-        <legend>1. Wind and Solar Energy Systems:</legend>
-        <label>Grade:</label>
-        <select name="wse_grade" required>
-            <option value="" disabled selected>Select</option>
-            <option value="na">Don't Have</option>
-            <option>A++</option>
-            <option>A+</option>
-            <option>A</option>
-            <option>B+</option>
-            <option>B</option>
-            <option>C+</option>
-            <option>C</option>
-            <option>D+</option>
-            <option>D</option>
-            <option>E+</option>
-            <option>E</option>
-            <option>F</option>
-        </select>
-    </fieldset>
+        <!-- THEORY SUBJECTS -->
+        <fieldset>
+            <legend>1. Wind and Solar Energy Systems:</legend>
+            <label>Grade:</label>
+            <select name="wse_grade" required>
+                <option value="" disabled selected>Select</option>
+                <option value="na">Don't Have</option>
+                <option>A++</option>
+                <option>A+</option>
+                <option>A</option>
+                <option>B+</option>
+                <option>B</option>
+                <option>C+</option>
+                <option>C</option>
+                <option>D+</option>
+                <option>D</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
+            </select>
+        </fieldset>
 
-    <fieldset>
-        <legend>2. Power Quality and FACTS:</legend>
-        <label>Grade:</label>
-        <select name="pqf_grade" required>
-            <option value="" disabled selected>Select</option>
-            <option value="na">Don't Have</option>
-            <option>A++</option>
-            <option>A+</option>
-            <option>A</option>
-            <option>B+</option>
-            <option>B</option>
-            <option>C+</option>
-            <option>C</option>
-            <option>D+</option>
-            <option>D</option>
-            <option>E+</option>
-            <option>E</option>
-            <option>F</option>
-        </select>
-    </fieldset>
+        <fieldset>
+            <legend>2. Power Quality and FACTS:</legend>
+            <label>Grade:</label>
+            <select name="pqf_grade" required>
+                <option value="" disabled selected>Select</option>
+                <option value="na">Don't Have</option>
+                <option>A++</option>
+                <option>A+</option>
+                <option>A</option>
+                <option>B+</option>
+                <option>B</option>
+                <option>C+</option>
+                <option>C</option>
+                <option>D+</option>
+                <option>D</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
+            </select>
+        </fieldset>
 
-    <fieldset>
-        <legend>3. Control System Design:</legend>
-        <label>Grade:</label>
-        <select name="csd_grade" required>
-            <option value="" disabled selected>Select</option>
-            <option value="na">Don't Have</option>
-            <option>A++</option>
-            <option>A+</option>
-            <option>A</option>
-            <option>B+</option>
-            <option>B</option>
-            <option>C+</option>
-            <option>C</option>
-            <option>D+</option>
-            <option>D</option>
-            <option>E+</option>
-            <option>E</option>
-            <option>F</option>
-        </select>
-    </fieldset>
+        <fieldset>
+            <legend>3. Control System Design:</legend>
+            <label>Grade:</label>
+            <select name="csd_grade" required>
+                <option value="" disabled selected>Select</option>
+                <option value="na">Don't Have</option>
+                <option>A++</option>
+                <option>A+</option>
+                <option>A</option>
+                <option>B+</option>
+                <option>B</option>
+                <option>C+</option>
+                <option>C</option>
+                <option>D+</option>
+                <option>D</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
+            </select>
+        </fieldset>
 
-    <fieldset>
-        <legend>4. Open Elective-I:</legend>
-        <label>Grade:</label>
-        <select name="oe1_grade" required>
-            <option value="" disabled selected>Select</option>
-            <option value="na">Don't Have</option>
-            <option>A++</option>
-            <option>A+</option>
-            <option>A</option>
-            <option>B+</option>
-            <option>B</option>
-            <option>C+</option>
-            <option>C</option>
-            <option>D+</option>
-            <option>D</option>
-            <option>E+</option>
-            <option>E</option>
-            <option>F</option>
-        </select>
-    </fieldset>
+        <fieldset>
+            <legend>4. Open Elective-I:</legend>
+            <label>Grade:</label>
+            <select name="oe1_grade" required>
+                <option value="" disabled selected>Select</option>
+                <option value="na">Don't Have</option>
+                <option>A++</option>
+                <option>A+</option>
+                <option>A</option>
+                <option>B+</option>
+                <option>B</option>
+                <option>C+</option>
+                <option>C</option>
+                <option>D+</option>
+                <option>D</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
+            </select>
+        </fieldset>
 
-    <!-- PRACTICAL & SESSIONAL -->
-    <fieldset>
-        <legend>5. Embedded Systems Lab:</legend>
-        <label>Grade:</label>
-        <select name="eslab_grade" required>
-            <option value="" disabled selected>Select</option>
-            <option value="na">Don't Have</option>
-            <option>A++</option>
-            <option>A+</option>
-            <option>A</option>
-            <option>B+</option>
-            <option>B</option>
-            <option>C+</option>
-            <option>C</option>
-            <option>D+</option>
-            <option>D</option>
-            <option>E+</option>
-            <option>E</option>
-            <option>F</option>
-        </select>
-    </fieldset>
+        <!-- PRACTICAL & SESSIONAL -->
+        <fieldset>
+            <legend>5. Embedded Systems Lab:</legend>
+            <label>Grade:</label>
+            <select name="eslab_grade" required>
+                <option value="" disabled selected>Select</option>
+                <option value="na">Don't Have</option>
+                <option>A++</option>
+                <option>A+</option>
+                <option>A</option>
+                <option>B+</option>
+                <option>B</option>
+                <option>C+</option>
+                <option>C</option>
+                <option>D+</option>
+                <option>D</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
+            </select>
+        </fieldset>
 
-    <fieldset>
-        <legend>6. Advanced Control System Lab:</legend>
-        <label>Grade:</label>
-        <select name="acslab_grade" required>
-            <option value="" disabled selected>Select</option>
-            <option value="na">Don't Have</option>
-            <option>A++</option>
-            <option>A+</option>
-            <option>A</option>
-            <option>B+</option>
-            <option>B</option>
-            <option>C+</option>
-            <option>C</option>
-            <option>D+</option>
-            <option>D</option>
-            <option>E+</option>
-            <option>E</option>
-            <option>F</option>
-        </select>
-    </fieldset>
+        <fieldset>
+            <legend>6. Advanced Control System Lab:</legend>
+            <label>Grade:</label>
+            <select name="acslab_grade" required>
+                <option value="" disabled selected>Select</option>
+                <option value="na">Don't Have</option>
+                <option>A++</option>
+                <option>A+</option>
+                <option>A</option>
+                <option>B+</option>
+                <option>B</option>
+                <option>C+</option>
+                <option>C</option>
+                <option>D+</option>
+                <option>D</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
+            </select>
+        </fieldset>
 
-    <fieldset>
-        <legend>7. Industrial Training:</legend>
-        <label>Grade:</label>
-        <select name="it_grade" required>
-            <option value="" disabled selected>Select</option>
-            <option value="na">Don't Have</option>
-            <option>A++</option>
-            <option>A+</option>
-            <option>A</option>
-            <option>B+</option>
-            <option>B</option>
-            <option>C+</option>
-            <option>C</option>
-            <option>D+</option>
-            <option>D</option>
-            <option>E+</option>
-            <option>E</option>
-            <option>F</option>
-        </select>
-    </fieldset>
+        <fieldset>
+            <legend>7. Industrial Training:</legend>
+            <label>Grade:</label>
+            <select name="it_grade" required>
+                <option value="" disabled selected>Select</option>
+                <option value="na">Don't Have</option>
+                <option>A++</option>
+                <option>A+</option>
+                <option>A</option>
+                <option>B+</option>
+                <option>B</option>
+                <option>C+</option>
+                <option>C</option>
+                <option>D+</option>
+                <option>D</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
+            </select>
+        </fieldset>
 
-    <fieldset>
-        <legend>8. Seminar:</legend>
-        <label>Grade:</label>
-        <select name="seminar_grade" required>
-            <option value="" disabled selected>Select</option>
-            <option value="na">Don't Have</option>
-            <option>A++</option>
-            <option>A+</option>
-            <option>A</option>
-            <option>B+</option>
-            <option>B</option>
-            <option>C+</option>
-            <option>C</option>
-            <option>D+</option>
-            <option>D</option>
-            <option>E+</option>
-            <option>E</option>
-            <option>F</option>
-        </select>
-    </fieldset>
+        <fieldset>
+            <legend>8. Seminar:</legend>
+            <label>Grade:</label>
+            <select name="seminar_grade" required>
+                <option value="" disabled selected>Select</option>
+                <option value="na">Don't Have</option>
+                <option>A++</option>
+                <option>A+</option>
+                <option>A</option>
+                <option>B+</option>
+                <option>B</option>
+                <option>C+</option>
+                <option>C</option>
+                <option>D+</option>
+                <option>D</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
+            </select>
+        </fieldset>
 
-    <fieldset>
-        <legend>9. Social Outreach / Discipline / Extra Curricular Activities:</legend>
-        <label>Grade:</label>
-        <select name="sodeca_grade" required>
-            <option value="" disabled selected>Select</option>
-            <option value="na">Don't Have</option>
-            <option>A++</option>
-            <option>A+</option>
-            <option>A</option>
-            <option>B+</option>
-            <option>B</option>
-            <option>C+</option>
-            <option>C</option>
-            <option>D+</option>
-            <option>D</option>
-            <option>E+</option>
-            <option>E</option>
-            <option>F</option>
-        </select>
-    </fieldset>
+        <fieldset>
+            <legend>9. Social Outreach / Discipline / Extra Curricular Activities:</legend>
+            <label>Grade:</label>
+            <select name="sodeca_grade" required>
+                <option value="" disabled selected>Select</option>
+                <option value="na">Don't Have</option>
+                <option>A++</option>
+                <option>A+</option>
+                <option>A</option>
+                <option>B+</option>
+                <option>B</option>
+                <option>C+</option>
+                <option>C</option>
+                <option>D+</option>
+                <option>D</option>
+                <option>E+</option>
+                <option>E</option>
+                <option>F</option>
+            </select>
+        </fieldset>
 
-    <br>
-    <button type="submit">Let's Calculate</button>
-</form>
-{% endblock %}
+        <br>
+        <button type="submit">Let's Calculate</button>
+    </form>
+    {% endblock %}
 </body>
+
 </html>

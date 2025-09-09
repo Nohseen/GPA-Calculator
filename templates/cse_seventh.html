@@ -6,10 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sgpa Calculator-7th sem cse</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/graduation hat favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/graduation hat favicon.png">
+    <link rel="apple-touch-icon" href="/static/graduation hat favicon.png">
 </head>
 
 <body>
-     {% extends "nav.html" %}
+    {% extends "nav.html" %}
     {% block content%}
     <h2>Computer Science Engineering 7th Semester SGPA Calculator</h2>
 
@@ -18,7 +21,7 @@
         <h3>Expected SGPA : {{results}}</h3>
         {% endif %}
     </div>
-    
+
     <form method="POST" action="/cse_seventh">
         <fieldset>
             <legend>Internet of Things</legend>
